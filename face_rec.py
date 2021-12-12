@@ -3,7 +3,6 @@ import cv2
 from face_recognition.api import face_encodings
 import numpy as np
 import pickle
-import os
 from flask import Flask, render_template, Response
 app=Flask(__name__)
 
