@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+import face_rec as fr
+from flask import Flask, render_template, Response
+from werkzeug.datastructures import ResponseCacheControl
 
 app = Flask(__name__)
 
@@ -16,7 +18,7 @@ def parse(name=None):
 def parse1(name=None):
 	import create_data
 	print("done")
-	return render_template('index.html',name=name)
+	return Response(fr.main("test_images/full.jpg"), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
     app.run()
